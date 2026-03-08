@@ -1,0 +1,37 @@
+algoritmo maiordiferença
+var
+    n, anterior: inteiro
+    alterna: lógico
+inicio
+    escreva("Digite o primeiro número: ")
+    leia(anterior)
+
+    se anterior <> 0 então
+        maior <- anterior
+        menor <- anterior
+        alterna <- VERDADEIRO
+    
+        enquanto alterna faça
+            escreva("Digite o próximo número: ")
+            leia(n)
+
+            se n = 0 então
+                alterna <- FALSO
+            senão
+                se (n > 0 e anterior < 0) ou (n < 0 e anterior > 0) então
+                    se n > maior então
+                        maior <- n
+                    senão
+                        se n < menor então
+                            menor <- n
+                        fimse
+                    fimse
+                senão
+                    alterna <- FALSO
+                fimse
+            fimse
+        fimenquanto
+
+        escreva("A maior diferença encontrada foi: ", maior - menor)
+    fimse
+fimalgoritm0

@@ -1,0 +1,19 @@
+algoritmo gerarsequenciadedoisnumeros
+var
+    v, v1, v2, p: real
+    i: inteiro
+inicio
+    v1 <- -4,5
+    v2 <- 2,5
+    sinal <- -1
+    
+    escreva(v1, ", ", v2)
+    i <- 3
+
+    enquanto i <= 50 faça
+        v <- (v1 ++ v2) / 2 + ((v1 - v2) / 2) * sinal
+        sinal <- - sinal
+        escreva(v)
+        i <- i + 1
+    fimenquanto
+fimalgoritmo

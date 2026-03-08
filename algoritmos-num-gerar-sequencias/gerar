@@ -1,0 +1,14 @@
+algoritmo potenciasdecrescentesde2
+var
+    v, i: inteiro
+inicio
+    v <- 65536
+    escreva(v)
+    i <- 16
+
+    enquanto i >= 1 faça
+        v <- v / 2
+        escreva(v)
+        i <- i - 1
+    fimenquanto
+fimalgoritmo

@@ -1,0 +1,30 @@
+//
+relacao de recorrencia
+nu1 = 4
+nui = nui-1 * -1
+
+de1 = 1
+dei = dei-1 + 2
+
+sm1 = nu1 / de1
+smi = smi-1 + nui/dei
+
+para todo de pertence aos inteiros | de = 9999
+//
+
+aalgoritmo calcularsomatoriopi
+var
+    nu, de, sm : real
+inicio
+    nu <- 4
+    de <- 1
+    sm <- nu/de
+
+    enquanto de < 9999 faça
+        nu <- -nu
+        de <- de + 2
+        sm <- sm + nu/de
+    fimenquanto
+
+    escreva("o somatorio é: ", sm)
+fimalgoritmo

@@ -1,0 +1,31 @@
+algoritmo convertendosegundos
+var
+    dia, hora, minuto, segundo: inteiro
+inicio
+    escreva("Digite uma quantidade de tempo em segundos: ")
+    leia(segundo)
+
+    dia <- 0
+    hora <- 0
+    minuto <- 0
+
+    enquanto segundo >= 86400 faça
+        dia <- dia + 1
+        segundo <- segundo - 86400
+    fimenquanto
+
+    enquanto segundo >= 3600 faça
+        hora <- hora + 1
+        segundo <- segundo - 3600
+    fimenquanto
+
+    enquanto segundo >= 60 faça
+        minuto <- minuto + 1
+        segundo <- segundo - 60
+    fimenquanto
+
+    escreva("Dias: ", dia)
+    escreva("Horas: ", hora)
+    escreva("Minutos: ", minuto)
+    escreva("Segundos: ", segundo)
+fimalgoritmo

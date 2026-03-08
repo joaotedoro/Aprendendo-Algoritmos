@@ -1,0 +1,64 @@
+algoritmo conversãodebase
+var
+    n, a, b, copia, digito, decimal, potencia, resto, resultado: inteiro
+    valido: logico
+
+inicio
+
+    escreva("Digite um número: ")
+    leia(n)
+
+    escreva("Digite a base de origem (2 a 10): ")
+    leia(a)
+
+    escreva("Digite a base de destino (2 a 10): ")
+    leia(b)
+
+    se (a < 2) ou (a > 10) ou (b < 2) ou (b > 10) então
+        escreva("Erro: as bases devem estar entre 2 e 10.")
+    senão
+
+        copia <- n
+        decimal <- 0
+        potencia <- 1
+        valido <- VERDADEIRO
+
+        enquanto copia > 0 faça
+
+            digito <- copia mod 10
+
+            se digito >= a então
+                valido <- FALSO
+            senão
+                decimal <- decimal + digito * potencia
+                potencia <- potencia * a
+            fimse
+
+            copia <- copia div 10
+
+        fimenquanto
+
+        se não valido então
+            escreva("Erro: o número possui dígitos inválidos para a base informada.")
+        senão
+
+            resultado <- 0
+            potencia <- 1
+
+            enquanto decimal > 0 faça
+
+                resto <- decimal mod b
+                resultado <- resultado + resto * potencia
+
+                potencia <- potencia * 10
+                decimal <- decimal div b
+
+            fimenquanto
+
+            escreva("Número convertido: ", resultado)
+
+        fimse
+
+    fimse
+
+fimalgoritmo

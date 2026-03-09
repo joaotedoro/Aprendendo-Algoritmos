@@ -1,0 +1,19 @@
+algoritmo rotacionar_bits_do_caracter
+var
+	c: caracter
+	extremos, meio, rotacionado, resultado: inteiro
+inicio
+	escreva("Digite um caracter: ")
+	leia(c)
+
+	extremos <- asc(c) bite 129
+
+	meio <- asc(c) bite 126
+	meio <- meio rotd 1
+
+	rotacionado <- (meio rote 2) bitou (meio rotd 4) bite 63
+
+	resultado <- (rotacionado rote 1) bitou extremos
+
+	escreva("O resultado é: ", chr(resultado))
+fimalgoritmo

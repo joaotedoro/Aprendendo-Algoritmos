@@ -1,0 +1,40 @@
+algoritmo compararCaracteresAlternados
+var
+    c1, c2, c3: caracter
+    alterna: logico
+inicio
+    escreva("Digite o primeiro caracter: ")
+    leia(c1)
+
+    se c1 <> '_' então
+        escreva("Digite o segundo caracter: ")
+        leia(c2)
+
+        se c1 <> c2 então
+            alterna <- VERDADEIRO
+        fimse
+
+        se c2 <> '_' então
+            escreva("Digite o terceiro caracter: ")
+            leia(c3)
+        
+            enquanto c3 <> '_' faça
+                alterna <- alterna e (c1 > c2 e c2 < c3) ou (c1 < c2 e c2 > c3)
+
+                c1 <- c2
+                c2 <- c3
+
+                escreva("Digite o próximo número: ")
+                leia(c3)
+
+            fimenquanto
+        fimse
+    fimse
+
+    se alterna então
+        escreva("sucesso")
+    senão
+        escreva("falha")
+    fimse
+fimalgoritmo
+

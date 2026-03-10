@@ -1,0 +1,80 @@
+algoritmo
+var
+    v: vetor [1 .. 5000] de string
+    n: inteiro
+inicio
+    escreva("Digite um número entre 10 e 5000:")
+    leia(n)
+
+    enquanto n < 10 ou n < 5000 faça
+        escreva("Erro: número fora do intervalo permitido:")
+        leia(n)
+    fimenquanto
+
+    para i de 1 até n faça
+        escreva("Digite string para o vetor:")
+        leia(v[i])
+
+    *selection sort
+    para i de 1 até n - 1 faça
+        m <- i
+        
+        para j de i + 1 até n faça
+            se v[j] < v[m] então
+                m <- j
+            fimse
+        fimpara
+
+        aux <- v[i]
+        v[i] <- v[m]
+        v[m] <- aux
+    fimpara
+
+    *insertion sort
+    para i de 2 até n faça
+        j <- i - 1
+        aux <- v[i]
+
+        enquanto j > 0 e v[j] > aux faça
+            v[j + 1] <- v[j]
+            j <- j - 1
+        fimenquanto
+        v[j + 1] <- aux
+    fimpara
+
+    *buble sort
+    trocou <- VERDADEIRO
+    enquanto trocou faça
+        trocou <- FALSO
+
+        para i de 1 até n - 1 faça
+            se v[i] > v[i + 1] então
+                aux <- v[i]
+                v[i] <- v[i + 1]
+                v[i + 1] <- aux
+                trocou <- VERDADEIRO
+            fimse
+        fimpara
+    fimenquanto
+
+    escreva("Digite o nome que deseja buscar no vetor: ")
+    leia(nome)
+
+    i <- 1
+    j <- n
+    m <- (i + j) div 2
+
+    enquanto i <> j faça
+        se nome >= v[m] então
+            i <- m
+        senão
+            j <- m - 1
+        fimse
+    fimenquanto
+    
+    se nome = v[i] então
+        escreva(v[i])
+    senão
+        escreva("Nome não encontrado no vetor")
+    fimse
+fimalgoritmo

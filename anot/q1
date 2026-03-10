@@ -1,0 +1,46 @@
+algoritmo
+    v: vetor [0 .. 9] de logico
+    iguais, checazero: logico
+    a, b: real 
+    na, nb, digito: inteiro
+inicio
+    escreva("Digite dois valores com no máximo duas casas decimais: ")
+    leia(a, b)
+
+    enquanto abs(a - trunca(a)) > 0,99 ou abs(b - trunca(b)) > 0,99 faça
+        escreva("Erro: os valores podem ter no máximo duas casas decimais. Tente novamente: ")
+        leia(a, b)
+    fimenquanto
+
+    na <- abs(trunca(a * 100))
+    nb <- abs(trunca(b * 100))
+
+    para i de 0 até 9 faça
+        v[i] <- FALSO
+    fimpara
+
+    checazero <- na = 0
+
+    enquant0 na > 0 ou chacazero faça
+        checazero <- FALSO
+        digito <- na mod 10
+        v[digito] <- VERDADEIRO
+        na <- na div 10
+    fimenquanto
+
+    iguais <- VERDADEIRO
+    checazero <- nb = 0
+
+    enquanto nb > 0 ou checazero faça
+        checazero <- FALSO
+        digito <- nb mod 10
+        iguais <- iguais e v[digito]
+        nb <- nb div 10
+    fimenquanto
+
+    se iguais então
+        escreva("Os números são formados pelos mesmos algarismos")
+    senão
+        escreva("Os números não são formados pelos mesmos algarismos")
+    fimse
+fimalgoritmo

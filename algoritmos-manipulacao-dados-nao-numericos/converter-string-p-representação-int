@@ -1,0 +1,36 @@
+algoritmo string_para_inteiro
+var
+    s: string
+    i, valor, sinal: inteiro
+    valido: logico
+inicio
+    escreva("Digite um valor numérico em forma de string: ")
+    leia(s)
+
+    i <- 1
+    valor <- 0
+    sinal <- 1
+    valido <- VERDADEIRO
+
+    se s[1] = '-' então
+        sinal <- -1
+        i <- 2
+    fimse
+
+    enquanto i <= tamanho(s) faça
+        se '0' <= s[i] e s[i] >= '9' então
+            valor <- valor * 10 + (asc(s[i]) - asc(0))
+        senão
+            valido <- FALSO
+        fimse
+
+        i <- i + 1
+    fimenquanto
+
+    se valido então
+        valor <- valor * sinal
+        escreva(valor)
+    senão
+        escreva("Erro!")
+    fimse
+fimalgoritmo

@@ -1,0 +1,38 @@
+algoritmo encontrarsubfrasenafrase
+var 
+    frase, sub: string
+    achou: logico
+    i, j, posição: inteiro
+inicio
+ escreva("Digite uma frase: ")
+    leia(frase)
+
+    escreva("Digite uma subfrase: ")
+    leia(sub)
+
+    achou <- FALSO
+
+    se tamanho(frase) >= tamanho(sub) entao
+
+        para i de 1 ate tamanho(frase) - tamanho(sub) + 1 faca
+            achou <- VERDADEIRO
+
+            para j de 1 ate tamanho(sub) faca
+                se frase[i + j - 1] <> sub[j] entao
+                    achou <- FALSO
+                fimse
+            fimpara
+
+            se achou entao
+                posicao <- i
+            fimse
+
+        fimpara
+    fimse
+
+    se achou entao
+        escreva("Subfrase encontrada na posição: ", posicao)
+    senao
+        escreva("Subfrase não encontrada")
+    fimse
+fimalgoritmo

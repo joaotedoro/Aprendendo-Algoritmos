@@ -1,0 +1,28 @@
+algoritmo converterespaçosmultiplos
+var
+    frase, nova: string
+	i: inteiro
+inicio
+	escreva("Digite uma frase: ")
+	leia(frase)
+
+	i <- 1
+	nova <- ""
+
+	enquanto i <= tamanho(frase) e frase[i] = ' ' faça
+		i <- i + 1
+	fimenquanto
+
+	enquanto i + 1 <= tamanho(frase) faça
+		se não (frase[i] = ' ' e frase[i + 1] = ' ') então
+			nova <- nova + frase[i]
+		fimse
+		i <- i + 1
+	fimenquanto
+
+	se frase[tamanho(frase)] <> ' ' então
+		nova <- nova + frase[tamanho(frase)]
+	fimse
+
+	escreva("Frase revisada: ", nova)
+fimalgoritmo
